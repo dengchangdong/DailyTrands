@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to Github Pages
 on:
   workflow_dispatch:
   push:
@@ -20,3 +20,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+          cname: www.dengchangdong.com
+          full_commit_message: Update ${{ env.DATE }}
