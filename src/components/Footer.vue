@@ -36,12 +36,6 @@ footer {
   justify-content: center;
   .copyright {
     margin-bottom: 4px;
-    .description {
-      &::after {
-        content: "@ Copyright By";
-        margin: 0 6px;
-      }
-    }
   }
   .author {
     cursor: pointer;
