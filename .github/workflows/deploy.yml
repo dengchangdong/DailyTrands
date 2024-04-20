@@ -20,5 +20,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-          cname: www.dengchangdong.com
+          cname: www.feef.net
           full_commit_message: Update ${{ env.DATE }}
