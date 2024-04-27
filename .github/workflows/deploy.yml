@@ -29,6 +29,7 @@ jobs:
           remote_user: ${{ secrets.REMOTE_SERVER_USERNAME }}
           remote_key: ${{ secrets.REMOTE_SERVER_KEY }}
           remote_port: ${{ secrets.REMOTE_SERVER_PORT }}
+          remote_key_pass: ${{ secrets.REMOTE_SERVER_KEY_PASS }}
           switches: -avzr --delete
           path: ./dist/*
           remote_path: ${{ secrets.REMOTE_SERVER_PATH }}
