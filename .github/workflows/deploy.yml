@@ -22,3 +22,13 @@ jobs:
           folder: dist
           cname: www.feef.net
           full_commit_message: Update ${{ env.DATE }}
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@6.0.0
+        with:
+          remote_host: ${{ secrets.REMOTE_SERVER_HOST }}
+          remote_user: ${{ secrets.REMOTE_SERVER_USERNAME }}
+          remote_key: ${{ secrets.REMOTE_SERVER_KEY }}
+          remote_port: ${{ secrets.REMOTE_SERVER_PORT }}
+          switches: -avzr --delete
+          path: ./dist/*
+          remote_path: ${{ secrets.REMOTE_SERVER_PATH }}
