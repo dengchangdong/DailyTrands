@@ -23,12 +23,13 @@ jobs:
           cname: www.feef.net
           full_commit_message: Update ${{ env.DATE }}
       - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
+        uses: burnett01/rsync-deployments@6.0.0
         with:
-          REMOTE_HOST: ${{ secrets.REMOTE_SERVER_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_SERVER_USERNAME }}
-          SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SERVER_KEY }}
-          REMOTE_PORT: ${{ secrets.REMOTE_SERVER_PORT }}
-          ARGS: -avzr --delete
-          SOURCE: ./dist/*
-          TARGET: ${{ secrets.REMOTE_SERVER_PATH }}
+          remote_host: ${{ secrets.REMOTE_SERVER_HOST }}
+          remote_user: ${{ secrets.REMOTE_SERVER_USERNAME }}
+          remote_key: ${{ secrets.REMOTE_SERVER_KEY }}
+          remote_key_pass: ${{ secrets.REMOTE_SERVER_KEY_PASS }}
+          remote_port: ${{ secrets.REMOTE_SERVER_PORT }}
+          remote_path: ${{ secrets.REMOTE_SERVER_PATH }}
+          switches: -avzr --delete
+          path: ./dist/*
