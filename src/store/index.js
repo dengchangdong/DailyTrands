@@ -147,8 +147,8 @@ export const mainStore = defineStore("mainData", {
           show: true,
         },
         {
-          label: "知乎",
-          name: "zhihu",
+          label: "知乎日报",
+          name: "zhihu-daily",
           order: 23,
           show: true,
         },
