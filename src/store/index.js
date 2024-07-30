@@ -99,8 +99,8 @@ export const mainStore = defineStore("mainData", {
           show: true,
         },
         {
-          label: "CSDN",
-          name: "csdn",
+          label: "NodeSeek",
+          name: "nodeseek",
           order: 15,
           show: true,
         },
